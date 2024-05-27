@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "github memo"
+title: "github command"
 categories: github
 tag: [github]
 toc: true
@@ -28,7 +28,7 @@ git checkout <branch_name>
 - pull: 로컬 <- 원격
 
     ```bash 
-    git pull origin hoseong
+    git pull origin main
     git pull <로컬 repository의 최신화 할 현재 branch> <다운받고 싶은 원격 repository의 branch 이름>
     ``` 
 
@@ -49,4 +49,5 @@ git commit -m <"commit message">
     git push origin hoseong
     git pull <로컬 repository의 수정 완료된 현재 branch> <최신화하고 싶은 원격 repository의 branch 이름>
     ```
+보통 수정사항은 main으로 업데이트 하지 않고 따로 생성한 branch에 업데이트한다.
 
