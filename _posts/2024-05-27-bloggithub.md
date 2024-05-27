@@ -46,7 +46,7 @@ git commit -m <"commit message">
 - push: 원격 -> 로컬
 
     ```bash 
-    git push origin hoseong
+    git push origin main
     git pull <로컬 repository의 수정 완료된 현재 branch> <최신화하고 싶은 원격 repository의 branch 이름>
     ```
 보통 수정사항은 main으로 업데이트 하지 않고 따로 생성한 branch에 업데이트한다.
