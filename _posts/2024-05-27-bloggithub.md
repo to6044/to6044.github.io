@@ -1,9 +1,8 @@
 ---
 layout: single
-title: "github command"
+title: "Github command"
 categories: github
 tag: [github]
-toc: true
 ---
 
 

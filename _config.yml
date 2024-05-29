@@ -137,6 +137,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - _paper_review
 exclude:
   - minimal-mistakes-jekyll.gemspec
   - "*.sublime-project"
@@ -273,7 +274,19 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
-
+collections:
+  sdran:
+    output: true
+    permalink: /sdran/:name/
+  helm:
+    output: true
+    permalink: /helm/:name/
+  paper_review:
+    output: true
+    permalink: /paper_review/:name/
+  kubernetes:
+    output: true
+    permalink: /kubernetes/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/
@@ -281,7 +294,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
 
 # Defaults
 defaults:
@@ -297,3 +309,16 @@ defaults:
       share: true
       related: true
       show_date: true
+  - scope:
+      path: ""
+      type: sdran
+    values:
+      layout: single
+      author_profile: false
+      toc: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      show_date: true
+
