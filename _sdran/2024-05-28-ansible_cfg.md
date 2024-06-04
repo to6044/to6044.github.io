@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "ansible.cfg"
+title: "2.ansible.cfg"
 categories: aether-onramp
 tag: [SDRAN PROJECT]
 ---

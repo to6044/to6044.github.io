@@ -28,7 +28,7 @@ git checkout <branch_name>
 
     ```bash 
     git pull origin main
-    git pull <로컬 repository의 최신화 할 현재 branch> <다운받고 싶은 원격 repository의 branch 이름>
+    git pull <원격 repository> <다운받고 싶은 원격 repository의 branch>
     ``` 
 
 6. add :
@@ -46,7 +46,24 @@ git commit -m <"commit message">
 
     ```bash 
     git push origin main
-    git pull <로컬 repository의 수정 완료된 현재 branch> <최신화하고 싶은 원격 repository의 branch 이름>
+    git push <업로드할 원격 repository> <원격 repository의 branch 이름>
     ```
-보통 수정사항은 main으로 업데이트 하지 않고 따로 생성한 branch에 업데이트한다.
+- 보통 수정사항은 main으로 업데이트 하지 않고 따로 생성한 branch에 업데이트한다.
+- origin : 무조건 원격 repository를 의미
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
