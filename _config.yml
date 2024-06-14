@@ -275,6 +275,9 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 collections:
+  sdran_code:
+    output: true
+    permalink: /sdran_code/:name/
   sdran:
     output: true
     permalink: /sdran/:name/
