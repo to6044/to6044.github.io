@@ -1,9 +1,13 @@
 # main links
 main:
   - title: "POST"
-    url: /post/  
-  - title: "PAPER REVIEW"
-    url: /paper_review/
+    url: /post/
+
+  - title: "BOOK"
+    url: /book/
+
+  - title: "DOCKER"
+    url: /docker/
     
   - title: "SD-RAN-CODE"
     url: /sdran_code/

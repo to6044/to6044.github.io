@@ -284,12 +284,15 @@ collections:
   helm:
     output: true
     permalink: /helm/:name/
-  paper_review:
+  docker:
     output: true
-    permalink: /paper_review/:name/
+    permalink: /docker/:name/
   kubernetes:
     output: true
     permalink: /kubernetes/:name/
+  book:
+    output: true
+    permalink: /book/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

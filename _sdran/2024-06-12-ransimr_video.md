@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "1.ransimulator"
+title: "1.ransimulator_lecture"
 categories: ransim
 tag: [SDRAN PROJECT]
 ---

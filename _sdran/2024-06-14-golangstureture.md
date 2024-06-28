@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "4.go structure"
-categories: RIC
+categories: golang
 tag: [SDRAN PROJECT]
 ---
 
