@@ -3,9 +3,6 @@ main:
   - title: "POST"
     url: /post/
 
-  - title: "BOOK"
-    url: /book/
-
   - title: "DOCKER"
     url: /docker/
     
@@ -20,7 +17,12 @@ main:
 
   - title: "K8S"
     url: /kubernetes/
+  
+  - title: "BOOK"
+    url: /book/
 
+  - title: "RESEARCH"
+    url: /research/
 
   # - title: "Sample Posts"
   #   url: /year-archive/

@@ -33,7 +33,7 @@ tag: [SDRAN PROJECT]
 
 
 
-3. "Creating Manager"(Newmanager 함수)
+3. "Creating Manager"
     - `func NewManager(config *Config) (*Manager, error)`
     - Config 값을 받아 Manager 구조체를 생성
     - Manager로 mgr, error로 nil이 출력
@@ -61,7 +61,7 @@ tag: [SDRAN PROJECT]
         - `m.mobilityDriver = mobility.NewMobilityDriver(...)`
             - 좌 : mobilitydriver는 Manger인 m의 field
             - 우 : mobility package에서 정의한 NewMobilityDriver 함수를 사용 (/pkg/mobility/driver.go)
-            - manager m의 field인 mobility driver에 NewMobilityDriver 함수를 이용해 다양한 field를 채움
+            - manager m의 field인 mobility driver의 NewMobilityDriver 함수를 이용해 다양한 field를 채움
             - manager의 각 field들은 다른 pakage에 go file로 정의되어 있음
         - `m.mobilityDriver.GenerateRoutes(...)`
             - `m.mobility.Driver.GenerateRoutes와 같음
@@ -139,14 +139,12 @@ tag: [SDRAN PROJECT]
     - node, cell, metrics Store method로 비움
 
 
-
 14. (m.LoadModel method, type error)
     - manager의 field인 model을 업데이트
 
 
 15. (m.LoadMetrics method, type error)
     - manager의 field인 metric을 업데이트
-
 
 
 16. (m.Resume method, x)

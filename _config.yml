@@ -293,6 +293,9 @@ collections:
   book:
     output: true
     permalink: /book/:name/
+  research:
+    output: true
+    permalink: /research/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/
