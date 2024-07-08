@@ -293,9 +293,15 @@ collections:
   book:
     output: true
     permalink: /book/:name/
-  research:
+  paper:
     output: true
-    permalink: /research/:name/
+    permalink: /paper/:name/
+  aws:
+    output: true
+    permalink: /aws/:name/
+  mcts:
+    output: true
+    permalink: /mcts/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

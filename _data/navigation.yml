@@ -1,28 +1,31 @@
 # main links
 main:
-  - title: "POST"
-    url: /post/
+  - title: "MCTS"
+    url: /mcts/
+
+  - title: "PAPER"
+    url: /paper/
+
+  - title: "AWS"
+    url: /aws/
+    
+  - title: "SD-RAN"
+    url: /sdran/  
 
   - title: "DOCKER"
     url: /docker/
-    
-  - title: "SD-RAN-CODE"
-    url: /sdran_code/
 
-  - title: "SD-RAN"
-    url: /sdran/    
+  - title: "BOOK"
+    url: /book/  
+
+  - title: "SDRANCODE"
+    url: /sdran_code/
 
   - title: "HELM"
     url: /helm/
 
   - title: "K8S"
     url: /kubernetes/
-  
-  - title: "BOOK"
-    url: /book/
-
-  - title: "RESEARCH"
-    url: /research/
 
   # - title: "Sample Posts"
   #   url: /year-archive/
