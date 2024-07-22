@@ -303,6 +303,9 @@ collections:
   mcts:
     output: true
     permalink: /mcts/:name/
+  posts:
+    output: true
+    permalink: /posts/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

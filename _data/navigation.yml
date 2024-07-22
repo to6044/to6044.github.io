@@ -24,6 +24,9 @@ main:
   - title: "HELM"
     url: /helm/
 
+  - title: "POST"
+    url: /posts/
+
   - title: "K8S"
     url: /kubernetes/
 
