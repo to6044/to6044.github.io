@@ -276,6 +276,9 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 collections:
+  post:
+    output: true
+    permalink: /post/:name/
   sdran_code:
     output: true
     permalink: /sdran_code/:name/
@@ -303,9 +306,7 @@ collections:
   mcts:
     output: true
     permalink: /mcts/:name/
-  posts:
-    output: true
-    permalink: /posts/:name/
+
 
 # HTML Compression
 # - https://jch.penibelst.de/
