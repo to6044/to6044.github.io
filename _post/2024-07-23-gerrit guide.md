@@ -55,7 +55,7 @@ tag: [gerrit]
         - `--signoff` : 커밋 메세지 끝에 Signed-off-by line 추가
         - Singed-off-by line만 생성됨, 저장 후 나가기
 
-    2. `git commit --ammed`
+    2. `git commit --amend`
         - Change-Id 생성됨
         - 아래 양식에 따라 commit 요약, Issue-ID 작성
 
