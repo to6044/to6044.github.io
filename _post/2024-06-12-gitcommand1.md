@@ -167,6 +167,7 @@ tag: [github]
 - 주둔지가 옮겨짐
 - 만약 A branch에서 `git rebase B` 명령을 실행하면, A branch 정보를 복사하여 주둔지만 B branch로 옮김
 - visualizing git으로 해보면서 이해해보기
+
 <img  src="/assets/posts/github/4.png" alt=""/>
 <img  src="/assets/posts/github/5.png" alt=""/>
 

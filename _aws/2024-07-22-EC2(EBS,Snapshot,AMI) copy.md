@@ -88,10 +88,19 @@ tag: [cloud]
 
 
 
+## 실습
+
+1. EC2 instance 생성
 
 
+2. image 생성
+    - instance에서 오른쪽 클릭
+    - 템플릿 및 이미지
+    - 이미지 생성
+
+3. volume
+    - volume은 원래의 instance 것을 따라감.
+    - 크기는 변경할 수 있지만 유형은 바꾸지 못함
 
 
-
-
-
+3. image 생성 완료시 이를 이용해 EC2 복제품을 만들 수 있음
