@@ -50,7 +50,7 @@ tag: [gerrit]
     - `git add .` 지양
 
 
-6. commit
+6. commit (1, 2번만 진행, 3번은 참고)
     1. `git commit -s`
         - `--signoff` : 커밋 메세지 끝에 Signed-off-by line 추가
         - Singed-off-by line만 생성됨, 저장 후 나가기
