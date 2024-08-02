@@ -291,9 +291,9 @@ collections:
   docker:
     output: true
     permalink: /docker/:name/
-  kubernetes:
+  ossca:
     output: true
-    permalink: /kubernetes/:name/
+    permalink: /ossca/:name/
   book:
     output: true
     permalink: /book/:name/

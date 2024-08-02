@@ -27,8 +27,8 @@ main:
   - title: "POST"
     url: /post/
 
-  - title: "K8S"
-    url: /kubernetes/
+  - title: "OSSCA"
+    url: /ossca/
 
   # - title: "Sample Posts"
   #   url: /year-archive/

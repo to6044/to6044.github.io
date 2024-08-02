@@ -45,25 +45,25 @@ tag: [gerrit]
     - `git status` : 현재 작업 중인 repo의 상태
 
 
-5. code 수정된 file만 staging 영역에 추가
+6. code 수정된 file만 staging 영역에 추가
     - `git add <file>`
     - `git add .` 지양
 
 
-6. commit
+7. commit (1, 2번만 진행, 3번은 참고)
     1. `git commit -s`
         - `--signoff` : 커밋 메세지 끝에 Signed-off-by line 추가
         - Singed-off-by line만 생성됨, 저장 후 나가기
 
-    2. `git commit --ammed`
+    2. `git commit --amend`
         - Change-Id 생성됨
         - 아래 양식에 따라 commit 요약, Issue-ID 작성
 
 
-    0. `git commit -s --amend`
+    3. `git commit -s --amend`
         - 본인 commit을 생성하지 않은 상태에서 이 command를 진행하게 되면 다른 committer의 commit을 변경할 수 있으므로 유의
 
-    3. commit message 양식 
+    4. commit message 양식 
 
             <commit 요약>
 
@@ -78,11 +78,11 @@ tag: [gerrit]
         - gerrit 홈페이지 - 상단 changes - merged - 해당 subject 참고
 
 
-34. review 전 commit message/code내용 최종확인 및 author 본인 계정 확인
+8. review 전 commit message/code내용 최종확인 및 author 본인 계정 확인
     - `git log -p`
 
 
-8. review
+9. review
     - `git review`
 
 
