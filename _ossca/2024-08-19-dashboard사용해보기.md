@@ -11,11 +11,24 @@ tag: [gerrit]
             aiml-dashboard와 aiml-notebook을 사용하기 위해 UAV prediction usecase를 사용해보려고 했다.
             UAV Path Prediction guideline : https://lf-o-ran-sc.atlassian.net/wiki/spaces/AIMLFEW/pages/13697106/New+usecase+-+UAV+Path+Prediction
 
+## container 내부와 외부는 token 이름만 다른 점을 기억하면 편함
+1. 내부 : `-t $INFLUXDB_ADMIN_USER_TOKEN`
+2. 외부 : `-t $INFLUXDB_TOKEN`
+    - ${INFLUXDB_TOKEN}
+        - influxdb 설치시 미리 설정해두었던 변수
+        - 재설정 방법
+            1. token 추출
+                - `kubectl exec -it my-release-influxdb-85888dfd97-bjr5g -- cat bitnami/influxdb/influxd.bolt | tr -cd "[:print:]" | grep -o '"token":"[^"]*"' | awk -F\" '{print $4}'`
+                <!--   9aE61w7Qyp58lVGrGd9f   -->
+            2. token 설정
+                - `export INFLUXDB_TOKEN=<token>`
+            3. 확인 방법 : `echo $INFLUXDB_TOKEN`
+
 
 ## influxdb에 training에 사용할 data 등록
 1. tocken echo
 2. bucket 생성
-    - `kubectl exec -it my-release-influxdb-85888dfd97-qzmwl -- influx bucket create -n UAVData -o primary -t $INFLUXDB_TOKEN`
+    - `kubectl exec -it my-release-influxdb-85888dfd97-bjr5g -- influx bucket create -n DLData -o primary -t $INFLUXDB_TOKEN`
 3. data 등록
     1. UAV_insert.py config 변경
             - DATASET_PATH = 'UAV_Dataset.csv'
@@ -25,6 +38,7 @@ tag: [gerrit]
         1. influxdb port-forward
             - `kubectl port-forward svc/my-release-influxdb 8086:8086`
         2. 가상환경 설정
+            - `apt install python3.10-venv`
             - `sudo -i` 후에 원하는 directory로 이동
             - `python3 -m venv .venv`
             - `source .venv/bin/activate`
@@ -49,6 +63,8 @@ tag: [gerrit]
     - 이 부분도 installation guide에 table로 정리되어있다.
     - <img  src="/assets/posts/ossca/9.png" alt=""/>
     - model management service는 사용하지 않는 방법으로 한다.
+    - training job 이름
+        - 대문자와 '-'를 사용하면 data extraction에 무조건 실패한다.
 
 3. training 완료
     - 아직 완성 못함
