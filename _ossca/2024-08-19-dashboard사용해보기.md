@@ -19,7 +19,7 @@ tag: [gerrit]
         - 재설정 방법
             1. token 추출
                 - `kubectl exec -it my-release-influxdb-85888dfd97-bjr5g -- cat bitnami/influxdb/influxd.bolt | tr -cd "[:print:]" | grep -o '"token":"[^"]*"' | awk -F\" '{print $4}'`
-                <!--   9aE61w7Qyp58lVGrGd9f   -->
+                <!--   hMJrHRCFdQHXohaE6NwL   -->
             2. token 설정
                 - `export INFLUXDB_TOKEN=<token>`
             3. 확인 방법 : `echo $INFLUXDB_TOKEN`

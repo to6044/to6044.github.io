@@ -306,7 +306,9 @@ collections:
   mcts:
     output: true
     permalink: /mcts/:name/
-
+  istio:
+    output: true
+    permalink: /istio/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/
