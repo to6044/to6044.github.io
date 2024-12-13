@@ -90,27 +90,40 @@ network condition과 다른 시스템의 변동이 시간이 지나도 일정하
 
 ## SYSTEM MODEL
 
-· O-RAN 기반 : learning-based resource management가 포함됨 - [1], [7], [8]   
-· BBU(eNodeB/gNB(CU+DU)) + RU   
+
+· O-RAN 기반 : learning-based resource management가 포함됨 - [1], [7], [8]     
+· BBU(eNodeB/gNB(CU+DU)) + RU     
+· 목적 : vBS의 동작을 관리하는 policy를 설계하여 네트워크 상황 및 사용자 요구에 적응하며 성능과 에너지 사용을 최적화.     
 
 ### architecture
-1. Non-RT RIC   
-· 내부에 instantiated rApp으로 정책 결정자(Policy Decider, PD)가 구현되어 있음.
-· PD는 효율적인 policy를 선택하는 algorithm을 구현함.
-· 선택된 policy를 통해 real-time scheduler가 vBS의 운영을 조절함.   
 
-2. xApp   
-· 정책 시행자(Policy Enforcer, PE)   
+1. 구성 요소1 : Non-RT RIC의 rApp
+· 내부에 instantiated rApp으로 정책 결정자(Policy Decider, PD)가 구현되어 있음.   
+· PD는 효율적인 policy를 선택하는 algorithm을 구현함.   
+· 선택된 policy를 통해 real-time scheduler가 vBS의 운영을 조절함.    
 
-3. Policy   
+2. 구성 요소2 : Near-RT RIC의 xApp   
+· 정책 시행자(Policy Enforcer, PE)    
+· PD가 결정한 정책을 실제 E2 Nodes에 전달하고 적용함.   
+
+
+3. Policy 전달 경로    
+· PD는 policy를 결정한 뒤 R1 interface를 통해 Non-RT RIC Framework에 전달.   
+· Non-RT RIC Framework는 policy를 A1 interface를 통해 Near-RT RIC으로 전달.   
+· Near-RT RIC의 xApp은 전달받은 policy를 E2 interface를 통해 E2 Nodes에 전달.   
 · rApp,PD ---(R1)---> Non-RT Framework ---(A1)---> Near-RT RIC(xApp, PE) ---(E2)---> E2Node(RU)  
 · optimal policy는 network condition, load에 따라 달라짐. (policy가 선택될 때 해당 조건이 고려되는 것은 아님)   
-   
-    · 각 결정 주기(t)에 가까워지면, Near-RT RIC의 data monitor가 E2Node가 수집한 performance와 energy cost metric을 E2 interface를 통해 받아 reward를 계산하고, 이 값을 O1 interface를 통해 PD에 전달한 후 PD는 reward를 기반을 policy를 선택함.   
-    · E2Node ---(E2)---(metric)---> xApp(data monitor),reward 계산 ---(O1)---> rApp,PD  
 
+4. Policy 결정 과정    
+· 앞으로의 네트워크 상태나 사용자 부하가 확실치 않은 상황에서 policy를 결정해야하기 때문에 policy는 주기적으로 재평가되어 교체될 수 있음.   
+· 각 결정 주기(t)가 끝나면, Near-RT RIC의 data monitor가 E2Node가 수집한 performance와 energy cost metric을 E2 interface를 통해 받아 reward를 계산하고, 이 값을 O1 interface를 통해 PD에 전달한 후 PD는 reward를 기반을 policy를 선택함.      
+· E2Node ---(E2)---(metric)---> xApp(data monitor),reward 계산 ---(O1)---> rApp,PD     
+· O1 interface를 통해 전달된 reward를 기반으로 PD는 더 개선된 정책을 내놓을 수 있도록 학습함.    
 
-4. Non-RT RIC의 구성 - [O-RAN.WG2.Non-RT-RIC-ARCH-R003-v03.00]   
+5. Policy 결정 순환 구조
+· 정책 결정(Non-RT RIC) → 정책 적용(Near-RT RIC → E2 노드) → 결과 측정(Near-RT RIC) → 보상 전달(O1) → 정책 개선(Non-RT RIC)
+
+6. Non-RT RIC의 구성 - [O-RAN.WG2.Non-RT-RIC-ARCH-R003-v03.00]   
 --> Non-RT RIC은 framework와 rApp 총 2가지로 구성됨.   
 
    - Non-RT RIC Framework    
@@ -375,3 +388,16 @@ PD Algorithm : 현재 시스템에서 사용하는 normalization reward function
 · 위의 기대 후회 공식에서 후회 $R_T$ 값이 $|X|$(meta policy)의 제곱근에 비례함.   
 · RT O-RAN 레벨에서는 개별 정책보다 meta policy의 수가 더 작기 때문에 알고리즘이 학습해야할 대상의 수가 줄어들기 때문에 후회도 줄어듦   
 · 이 말이 무슨 말을 의미하는지 잘 모르겠다.   
+
+
+
+
+# PERFORMANCE EVALUATION
+
+## 실험방법
+
+## 이전 연구와의 차이가
+
+## Algorithm 평가
+
+## 결론
