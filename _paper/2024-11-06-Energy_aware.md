@@ -116,7 +116,7 @@ network condition과 다른 시스템의 변동이 시간이 지나도 일정하
 
 4. Policy 결정 과정    
 · 앞으로의 네트워크 상태나 사용자 부하가 확실치 않은 상황에서 policy를 결정해야하기 때문에 policy는 주기적으로 재평가되어 교체될 수 있음.   
-· 각 결정 주기(t)가 끝나면, Near-RT RIC의 data monitor가 E2Node가 수집한 performance와 energy cost metric을 E2 interface를 통해 받아 reward를 계산하고, 이 값을 O1 interface를 통해 PD에 전달한 후 PD는 reward를 기반을 policy를 선택함.      
+· 각 결정 주기(t)가 끝나면, Near-RT RIC의 data monitor가 E2Node가 수집한 performance와 energy cost metric을 E2 interface를 통해 받아 reward를 계산하고, 이 값을 O1 interface를 통해 PD에 전달한 후 PD는 reward를 기반으로 policy를 선택함.      
 · E2Node ---(E2)---(metric)---> xApp(data monitor),reward 계산 ---(O1)---> rApp,PD     
 · O1 interface를 통해 전달된 reward를 기반으로 PD는 더 개선된 정책을 내놓을 수 있도록 학습함.    
 
